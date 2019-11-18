@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Codejam-canvas</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header container">
+    <button class="header__menu button" type="button"></button>
+    <h1 class="header__title">CodeJam - Canvas</h1>
+    <button class="header__toggle button" type="button"></button>
+  </header>
+
+  <main class="main-wrapper">
+    <aside class="tools-bar">
+      <section class="tools-bar__item tools">
+        <div class="tools__item tools__paint-bucket">
+          <button id="paint-bucket" type="button" class="tools__button button button--paint-bucket">Paint bucket</button>
+        </div>
+        <div class="tools__item tools__item--color-picker">
+          <button id="color-picker" type="button" class="tools__button button button--color-picker">Choose color</button>
+        </div>
+        <div class="tools__item tools__item--pencil-tool">
+          <button id="pencil-tool" type="button" class="tools__button button button--pencil-tool tools__button--active">Pencil</button>
+        </div>
+        <div  class="tools__item">
+          <button id="transform" type="button" class="tools__button button button--transform">Transform</button>
+        </div>
+      </section>
+
+      <section class="tools-bar__item palette">
+        <div class="palette__item">
+          <button class="button palette__button">
+            <span id="current-color" class="button--circle" style="background-color: #41f795"></span>Current color
+          </button>
+        </div>
+        <div class="palette__item palette__item--previous-color">
+          <button class="button palette__button">
+            <span id="previous-color" class="button--circle" style="background-color: #c4c4c4"></span>Previous color
+          </button>
+        </div>
+        <div class="palette__item">
+          <button id="red" class="button palette__button">
+            <span class="button--circle" style="background-color: #f74141"></span>Red
+          </button>
+        </div>
+        <div class="palette__item">
+          <button id="blue" class="button palette__button">
+            <span class="button--circle" style="background-color: #41b6f7"></span>Blue
+          </button>
+        </div>
+        <div class="palette__item color-picker">
+          <label class="color-picker__current-color">
+            <input id="color-picker-tool" class="color-picker__input" type="color" name="color-picker" value="#e66465">
+          </label>      
+        </div>
+      </section>
+    </aside>
+    
+    <div class="canvas-block">
+      <div class="search">
+        <button class="button search__button search__button--load">Load</button>
+        <input id="input" type="text" class="search__input" name="text" placeholder="enter the city"></input>
+        <button id="grayscale" class="button search__button search__button--bl-wt">B&W</button>
+      </div>
+      <div class="canvas">
+        <canvas id ="canvas" class="canvas__element" width="512" height="512"></canvas>
+      </div>
+      <div class="slider">
+        <input id="range" class="slider__range" type="range" min="0" max="512" value="512" >
+      </div>      
+    </div>    
+    
+  </main>
+<script type="text/javascript" src="main.js"></script></body>
+</html>
