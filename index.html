@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Codejam-canvas</title>
+  <title>CodeJam - Image-api</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header container">
     <button class="header__menu button" type="button"></button>
-    <h1 class="header__title">CodeJam - Canvas</h1>
+    <h1 class="header__title">CodeJam - Image-api</h1>
     <button class="header__toggle button" type="button"></button>
   </header>
 
@@ -24,7 +24,7 @@
           <button id="color-picker" type="button" class="tools__button button button--color-picker">Choose color</button>
         </div>
         <div class="tools__item tools__item--pencil-tool">
-          <button id="pencil-tool" type="button" class="tools__button button button--pencil-tool tools__button--active">Pencil</button>
+          <button id="pencil-tool" type="button" class="tools__button button button--pencil-tool">Pencil</button>
         </div>
         <div  class="tools__item">
           <button id="transform" type="button" class="tools__button button button--transform">Transform</button>
@@ -62,16 +62,26 @@
     
     <div class="canvas-block">
       <div class="search">
-        <button class="button search__button search__button--load">Load</button>
-        <input id="input" type="text" class="search__input" name="text" placeholder="enter the city"></input>
+        <button id="load" class="button search__button search__button--load">Load</button>
+        <input id="input" value="Minsk" type="text" class="search__input" name="text" placeholder="enter the city"></input>
         <button id="grayscale" class="button search__button search__button--bl-wt">B&W</button>
       </div>
       <div class="canvas">
         <canvas id ="canvas" class="canvas__element" width="512" height="512"></canvas>
       </div>
       <div class="slider">
-        <input id="range" class="slider__range" type="range" min="0" max="512" value="512" >
-      </div>      
+        <input id="range" class="slider__range" type="range" min="128" max="512" step="3" list="list" value="512" >
+        <datalist id="list">
+          <option>128</option>
+          <option>256</option>
+          <option>512</option>
+        </datalist>        
+        <div class="slider__label">
+          <span>128</span>
+          <span>256</span>
+          <span>512</span>
+        </div> 
+      </div>     
     </div>    
     
   </main>
